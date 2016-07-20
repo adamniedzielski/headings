@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require "json"
+require "open3"
+
+content = STDIN.read
+output, _ = Open3.capture2(File.expand_path("../headings", __FILE__), stdin_data: content)
+puts output
